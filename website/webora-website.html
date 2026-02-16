@@ -1,0 +1,1628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Webora — Premium Digital Studio (Websites • Booking • Digital Menus)</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Webora is a premium digital studio building high-performance websites, QR digital menus, and booking systems for modern businesses. Fast delivery, mobile-first, SEO-ready." />
+  <meta name="keywords" content="Webora, web design, booking system, digital menu, QR menu, website, Newcastle, Morocco, UK" />
+  <meta name="theme-color" content="#000000" />
+
+  <!-- Open Graph (WhatsApp/IG share) -->
+  <meta property="og:title" content="Webora — Premium Digital Studio" />
+  <meta property="og:description" content="High-performance websites, booking systems, and QR digital menus. Built with Computer Science precision + premium design." />
+  <meta property="og:type" content="website" />
+  <!-- Put your real preview image here -->
+  <meta property="og:image" content="logo.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --primary:#D4AF37;
+      --primary-dark:#B8941F;
+      --accent:#F4E5C3;
+
+      --bg:#000;
+      --bg2:#0a0a0a;
+      --card:#0f0f0f;
+      --card2:#111;
+
+      --text:#fff;
+      --dim:#b8b8b8;
+      --muted:#808080;
+
+      --gold:linear-gradient(135deg,#D4AF37 0%,#F4E5C3 50%,#D4AF37 100%);
+      --glass:rgba(0,0,0,.78);
+      --stroke:rgba(212,175,55,.22);
+
+      --radius:22px;
+      --shadow:0 20px 60px rgba(212,175,55,.18);
+      --shadow2:0 12px 40px rgba(0,0,0,.55);
+
+      --max:1240px;
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:"Plus Jakarta Sans",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+      overflow-x:hidden;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    button{font-family:inherit;cursor:pointer}
+
+    /* Background */
+    .bg-wrapper{position:fixed;inset:0;z-index:-1;overflow:hidden}
+    .gradient-orb{position:absolute;border-radius:50%;filter:blur(110px);opacity:.38;animation:float 20s ease-in-out infinite}
+    .orb-1{width:520px;height:520px;background:radial-gradient(circle,rgba(212,175,55,.45) 0%,transparent 70%);top:-12%;left:-12%}
+    .orb-2{width:420px;height:420px;background:radial-gradient(circle,rgba(244,229,195,.32) 0%,transparent 70%);top:48%;right:-12%;animation-delay:7s}
+    .orb-3{width:640px;height:640px;background:radial-gradient(circle,rgba(212,175,55,.25) 0%,transparent 70%);bottom:-24%;left:26%;animation-delay:14s}
+    @keyframes float{
+      0%,100%{transform:translate(0,0) scale(1)}
+      33%{transform:translate(28px,-28px) scale(1.08)}
+      66%{transform:translate(-18px,18px) scale(.92)}
+    }
+    .grid-overlay{
+      position:absolute;inset:0;
+      background-image:
+        linear-gradient(rgba(212,175,55,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212,175,55,.05) 1px, transparent 1px);
+      background-size:52px 52px;
+      opacity:.8;
+      animation:gridMove 20s linear infinite;
+      mask-image:radial-gradient(circle at 50% 20%, rgba(0,0,0,1), rgba(0,0,0,.2) 50%, rgba(0,0,0,0) 75%);
+    }
+    @keyframes gridMove{0%{transform:translateY(0)}100%{transform:translateY(52px)}}
+
+    /* Layout */
+    .container{width:min(var(--max), 92%);margin:0 auto}
+
+    /* Nav */
+    nav{
+      position:fixed;top:0;left:0;right:0;
+      z-index:9999;
+      background:rgba(0,0,0,.85);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid var(--stroke);
+      padding:18px 0;
+      transform:translateY(0);
+    }
+    .nav-row{
+      display:flex;align-items:center;justify-content:space-between;gap:16px;
+    }
+    .brand{
+      display:flex;align-items:center;gap:12px;
+    }
+    .brand img{
+      width:38px;height:38px;border-radius:12px;
+      object-fit:cover;
+      border:1px solid rgba(212,175,55,.28);
+      box-shadow:0 10px 22px rgba(0,0,0,.35);
+    }
+    .logo{
+      font-family:"Orbitron",sans-serif;
+      font-size:1.35rem;
+      font-weight:900;
+      letter-spacing:3px;
+      background:var(--gold);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      background-clip:text;
+      text-transform:uppercase;
+      filter:drop-shadow(0 0 12px rgba(212,175,55,.45));
+    }
+    .nav-links{
+      display:flex;align-items:center;gap:26px;
+      list-style:none;
+    }
+    .nav-links a{
+      color:var(--text);
+      font-weight:500;
+      font-size:.95rem;
+      opacity:.92;
+      position:relative;
+      transition:all .25s ease;
+      letter-spacing:.2px;
+    }
+    .nav-links a:hover{color:var(--primary);opacity:1}
+    .nav-links a::after{
+      content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;
+      background:var(--gold);transition:width .25s ease;
+    }
+    .nav-links a:hover::after{width:100%}
+
+    .nav-cta{
+      display:flex;align-items:center;gap:10px;
+    }
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:12px 18px;border-radius:999px;
+      font-weight:700;font-size:.95rem;
+      border:1px solid rgba(212,175,55,.28);
+      transition:all .25s ease;
+      user-select:none;
+    }
+    .btn-primary{
+      background:var(--gold);
+      color:#000;
+      box-shadow:0 12px 30px rgba(212,175,55,.35);
+      border:none;
+      position:relative;
+      overflow:hidden;
+    }
+    .btn-primary::before{
+      content:"";position:absolute;inset:0;
+      background:linear-gradient(90deg,transparent,rgba(255,255,255,.32),transparent);
+      transform:translateX(-120%);
+      transition:transform .6s ease;
+    }
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(212,175,55,.52)}
+    .btn-primary:hover::before{transform:translateX(120%)}
+    .btn-ghost{
+      background:transparent;color:var(--primary);
+    }
+    .btn-ghost:hover{background:rgba(212,175,55,.12);transform:translateY(-2px)}
+
+    /* Mobile menu */
+    .hamburger{
+      width:44px;height:44px;border-radius:12px;
+      display:none;align-items:center;justify-content:center;
+      border:1px solid rgba(212,175,55,.22);
+      background:rgba(15,15,15,.55);
+      backdrop-filter:blur(16px);
+    }
+    .hamburger span{display:block;width:18px;height:2px;background:var(--text);position:relative}
+    .hamburger span::before,.hamburger span::after{
+      content:"";position:absolute;left:0;width:18px;height:2px;background:var(--text);transition:transform .2s ease, top .2s ease, opacity .2s ease;
+    }
+    .hamburger span::before{top:-6px}
+    .hamburger span::after{top:6px}
+    .hamburger.active span{background:transparent}
+    .hamburger.active span::before{top:0;transform:rotate(45deg)}
+    .hamburger.active span::after{top:0;transform:rotate(-45deg)}
+
+    .mobile-panel{
+      position:fixed;top:74px;left:0;right:0;
+      background:rgba(0,0,0,.92);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid var(--stroke);
+      transform:translateY(-14px);
+      opacity:0;pointer-events:none;
+      transition:all .22s ease;
+      z-index:9998;
+    }
+    .mobile-panel.open{
+      transform:translateY(0);
+      opacity:1;pointer-events:auto;
+    }
+    .mobile-panel .container{padding:18px 0 20px}
+    .mobile-links{list-style:none;display:flex;flex-direction:column;gap:12px}
+    .mobile-links a{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:12px 12px;border-radius:14px;
+      background:rgba(15,15,15,.65);
+      border:1px solid rgba(212,175,55,.18);
+    }
+    .mobile-links a span{color:var(--dim);font-weight:600}
+    .mobile-links a em{font-style:normal;color:var(--primary);font-weight:900}
+
+    /* Hero */
+    header.hero{
+      min-height:100vh;
+      padding:120px 0 70px;
+      display:flex;align-items:center;
+    }
+    .hero-grid{
+      display:grid;grid-template-columns:1.1fr .9fr;
+      gap:44px;align-items:center;
+    }
+    .badge{
+      display:inline-flex;gap:10px;align-items:center;
+      padding:8px 14px;border-radius:999px;
+      background:rgba(15,15,15,.55);
+      border:1px solid rgba(212,175,55,.22);
+      color:var(--primary);
+      font-weight:800;font-size:.82rem;
+      letter-spacing:.8px;text-transform:uppercase;
+      width:max-content;
+      margin-bottom:18px;
+    }
+    .h1{
+      font-family:"Orbitron",sans-serif;
+      font-size:clamp(2.3rem, 4.7vw, 4.4rem);
+      line-height:1.08;
+      font-weight:900;
+      margin-bottom:16px;
+      background:var(--gold);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      background-clip:text;
+      text-shadow:0 0 34px rgba(212,175,55,.18);
+    }
+    .sub{
+      font-size:1.15rem;color:var(--dim);
+      max-width:60ch;
+    }
+    .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:22px}
+    .meta-row{
+      display:flex;gap:14px;flex-wrap:wrap;margin-top:22px;
+      color:var(--dim);font-size:.95rem;
+    }
+    .meta-chip{
+      display:inline-flex;gap:10px;align-items:center;
+      padding:10px 12px;border-radius:14px;
+      background:rgba(15,15,15,.55);
+      border:1px solid rgba(212,175,55,.15);
+    }
+    .meta-chip b{color:var(--text)}
+    .meta-chip i{font-style:normal;color:var(--primary);font-weight:900}
+
+    .hero-right{
+      display:flex;flex-direction:column;gap:14px;
+    }
+    .float-card{
+      position:relative;
+      background:rgba(15,15,15,.68);
+      border:1px solid rgba(212,175,55,.22);
+      border-radius:var(--radius);
+      padding:18px 18px;
+      backdrop-filter:blur(18px);
+      box-shadow:var(--shadow2);
+      overflow:hidden;
+      transform:translateZ(0);
+    }
+    .float-card::before{
+      content:"";position:absolute;inset:-60%;
+      background:linear-gradient(45deg,transparent,rgba(212,175,55,.10),transparent);
+      animation:shimmer 3.3s linear infinite;
+    }
+    @keyframes shimmer{
+      0%{transform:translate(-30%,-30%)}
+      100%{transform:translate(30%,30%)}
+    }
+    .float-card .row{position:relative;display:flex;gap:14px;align-items:center}
+    .icon-bubble{
+      width:54px;height:54px;border-radius:16px;
+      background:rgba(212,175,55,.12);
+      border:1px solid rgba(212,175,55,.22);
+      display:flex;align-items:center;justify-content:center;
+      overflow:hidden;
+      flex:0 0 auto;
+    }
+    .icon-bubble img{width:30px;height:30px;object-fit:contain;filter:drop-shadow(0 0 10px rgba(212,175,55,.25))}
+    .float-card h3{font-size:1.1rem;color:var(--primary);margin-bottom:2px}
+    .float-card p{font-size:.92rem;color:var(--dim)}
+    .float-card small{display:block;margin-top:6px;color:var(--muted)}
+
+    /* Sections */
+    section{padding:86px 0}
+    .section-head{margin-bottom:34px}
+    .kicker{
+      color:var(--primary);
+      font-weight:900;
+      letter-spacing:1.6px;
+      text-transform:uppercase;
+      font-size:.8rem;
+      margin-bottom:10px;
+    }
+    .h2{
+      font-family:"Orbitron",sans-serif;
+      font-size:clamp(1.7rem,3.2vw,3.1rem);
+      line-height:1.12;
+      font-weight:900;
+      background:var(--gold);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      background-clip:text;
+      margin-bottom:10px;
+    }
+    .lead{color:var(--dim);font-size:1.05rem;max-width:70ch}
+
+    /* Proof / Stats */
+    .proof{
+      background:rgba(15,15,15,.45);
+      border-top:1px solid rgba(212,175,55,.12);
+      border-bottom:1px solid rgba(212,175,55,.12);
+    }
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0,1fr));
+      gap:16px;
+      margin-top:18px;
+    }
+    .stat{
+      background:rgba(15,15,15,.6);
+      border:1px solid rgba(212,175,55,.16);
+      border-radius:18px;
+      padding:18px;
+    }
+    .stat b{display:block;font-size:1.55rem;color:var(--text);letter-spacing:.3px}
+    .stat span{color:var(--dim);font-size:.95rem}
+    .trust-row{
+      display:flex;gap:12px;flex-wrap:wrap;
+      margin-top:18px;
+    }
+    .trust-pill{
+      padding:10px 12px;border-radius:999px;
+      background:rgba(212,175,55,.10);
+      border:1px solid rgba(212,175,55,.18);
+      color:var(--text);
+      font-weight:700;
+      font-size:.92rem;
+    }
+
+    /* Services */
+    .grid{
+      display:grid;gap:16px;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+    }
+    .card{
+      background:rgba(15,15,15,.62);
+      border:1px solid rgba(212,175,55,.18);
+      border-radius:var(--radius);
+      padding:22px;
+      position:relative;
+      overflow:hidden;
+      transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+      transform:translateZ(0);
+    }
+    .card:hover{
+      transform:translateY(-8px);
+      border-color:rgba(212,175,55,.42);
+      box-shadow:var(--shadow);
+    }
+    .card-top{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+    .card-top .icon-bubble{width:52px;height:52px;border-radius:16px}
+    .card h3{color:var(--primary);font-size:1.2rem;margin-bottom:8px}
+    .card p{color:var(--dim);font-size:.98rem}
+    .list{
+      margin-top:12px;list-style:none;display:grid;gap:8px
+    }
+    .list li{
+      color:var(--text);
+      font-size:.92rem;
+      padding-left:18px;
+      position:relative;
+    }
+    .list li::before{
+      content:"→";
+      position:absolute;left:0;top:0;
+      color:var(--primary);
+      font-weight:900;
+    }
+
+    /* Packages */
+    .packages-grid{
+      display:grid;gap:16px;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      margin-top:10px;
+    }
+    .price-card{
+      background:linear-gradient(135deg, rgba(15,15,15,.75), rgba(15,15,15,.55));
+      border:1px solid rgba(212,175,55,.18);
+      border-radius:var(--radius);
+      padding:24px;
+      position:relative;
+      overflow:hidden;
+      transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+    .price-card:hover{transform:translateY(-8px);box-shadow:var(--shadow);border-color:rgba(212,175,55,.42)}
+    .price-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+    .tag{
+      font-size:.78rem;
+      font-weight:900;
+      color:#000;
+      background:var(--gold);
+      padding:8px 10px;border-radius:999px;
+      white-space:nowrap;
+    }
+    .price-card h3{color:var(--text);font-size:1.25rem;margin-bottom:6px}
+    .price{
+      font-family:"Orbitron",sans-serif;
+      font-weight:900;
+      font-size:2.2rem;
+      color:var(--primary);
+      margin:10px 0 4px;
+    }
+    .price small{font-family:inherit;font-size:.92rem;color:var(--dim);font-weight:700}
+    .price-desc{color:var(--dim);font-size:.95rem;margin-bottom:14px}
+    .note{color:var(--muted);font-size:.85rem;margin-top:10px}
+    .price-card .btn{width:100%;margin-top:12px}
+
+    /* Case Studies */
+    .case-grid{
+      display:grid;gap:16px;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      margin-top:10px;
+    }
+    .case{
+      background:rgba(15,15,15,.62);
+      border:1px solid rgba(212,175,55,.18);
+      border-radius:var(--radius);
+      overflow:hidden;
+      transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+    .case:hover{transform:translateY(-8px);box-shadow:var(--shadow);border-color:rgba(212,175,55,.42)}
+    .case-thumb{
+      height:200px;
+      background:linear-gradient(135deg, rgba(212,175,55,.16), rgba(244,229,195,.06));
+      border-bottom:1px solid rgba(212,175,55,.16);
+      display:flex;align-items:center;justify-content:center;
+      position:relative;
+      overflow:hidden;
+    }
+    .case-thumb img{
+      width:100%;height:100%;
+      object-fit:cover;
+      opacity:.9;
+      transform:scale(1.02);
+    }
+    .case-body{padding:18px}
+    .case-body h3{color:var(--text);font-size:1.15rem;margin-bottom:6px}
+    .case-body p{color:var(--dim);font-size:.94rem;margin-bottom:12px}
+    .pill-row{display:flex;gap:8px;flex-wrap:wrap}
+    .pill{
+      padding:8px 10px;border-radius:999px;
+      background:rgba(212,175,55,.10);
+      border:1px solid rgba(212,175,55,.18);
+      color:var(--text);
+      font-weight:700;
+      font-size:.82rem;
+    }
+
+    /* Portfolio */
+    .portfolio-grid{
+      display:grid;gap:16px;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      margin-top:10px;
+    }
+    .work{
+      position:relative;
+      border-radius:var(--radius);
+      overflow:hidden;
+      border:1px solid rgba(212,175,55,.18);
+      background:rgba(15,15,15,.62);
+      height:360px;
+      cursor:pointer;
+      transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+    .work:hover{transform:translateY(-8px);box-shadow:var(--shadow);border-color:rgba(212,175,55,.42)}
+    .work img{width:100%;height:100%;object-fit:cover;opacity:.88}
+    .work .overlay{
+      position:absolute;inset:0;
+      background:linear-gradient(135deg, rgba(0,0,0,.15), rgba(0,0,0,.85));
+      display:flex;flex-direction:column;justify-content:flex-end;
+      padding:18px;
+    }
+    .work .overlay h3{color:var(--text);font-size:1.15rem;margin-bottom:6px}
+    .work .overlay p{color:var(--dim);font-size:.92rem}
+    .work .actions{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+    .work .actions a{
+      padding:10px 12px;border-radius:999px;
+      background:rgba(212,175,55,.12);
+      border:1px solid rgba(212,175,55,.22);
+      font-weight:800;font-size:.85rem;
+    }
+    .work .actions a:hover{background:rgba(212,175,55,.20)}
+
+    /* Process */
+    .steps{
+      display:grid;gap:16px;
+      grid-template-columns:repeat(4, minmax(0,1fr));
+      margin-top:10px;
+    }
+    .step{
+      background:rgba(15,15,15,.62);
+      border:1px solid rgba(212,175,55,.18);
+      border-radius:var(--radius);
+      padding:20px;
+    }
+    .num{
+      width:54px;height:54px;border-radius:16px;
+      background:var(--gold);
+      color:#000;
+      display:flex;align-items:center;justify-content:center;
+      font-family:"Orbitron",sans-serif;
+      font-weight:900;
+      margin-bottom:12px;
+      box-shadow:0 12px 26px rgba(212,175,55,.25);
+    }
+    .step h3{color:var(--primary);margin-bottom:6px;font-size:1.05rem}
+    .step p{color:var(--dim);font-size:.93rem}
+
+    /* Testimonials */
+    .test-grid{
+      display:grid;gap:16px;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      margin-top:10px;
+    }
+    .quote{
+      background:rgba(15,15,15,.62);
+      border:1px solid rgba(212,175,55,.18);
+      border-radius:var(--radius);
+      padding:22px;
+    }
+    .quote p{color:var(--text);font-size:.98rem}
+    .quote .who{margin-top:12px;color:var(--dim);font-weight:800}
+    .quote .who span{color:var(--muted);font-weight:700}
+
+    /* FAQ */
+    .faq{
+      max-width:860px;margin-top:10px;
+    }
+    .faq-item{
+      border:1px solid rgba(212,175,55,.18);
+      background:rgba(15,15,15,.62);
+      border-radius:18px;
+      overflow:hidden;
+      margin-bottom:10px;
+    }
+    .faq-q{
+      width:100%;
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+      padding:16px 16px;
+      background:transparent;border:none;color:var(--text);
+      font-weight:900;font-size:1rem;
+      text-align:left;
+    }
+    .faq-q i{font-style:normal;color:var(--primary);font-weight:900;transition:transform .2s ease}
+    .faq-a{
+      max-height:0;overflow:hidden;
+      transition:max-height .25s ease;
+      padding:0 16px;
+    }
+    .faq-a p{color:var(--dim);padding:0 0 16px;font-size:.95rem}
+    .faq-item.open .faq-a{max-height:260px}
+    .faq-item.open .faq-q i{transform:rotate(45deg)}
+
+    /* Contact */
+    .contact-wrap{
+      display:grid;gap:18px;
+      grid-template-columns:1fr 1fr;
+      align-items:start;
+      margin-top:10px;
+    }
+    .panel{
+      background:rgba(15,15,15,.62);
+      border:1px solid rgba(212,175,55,.18);
+      border-radius:var(--radius);
+      padding:22px;
+    }
+    form .row{
+      display:grid;gap:12px;
+      grid-template-columns:1fr 1fr;
+    }
+    label{display:block;color:var(--dim);font-weight:800;font-size:.85rem;margin-bottom:6px}
+    input,select,textarea{
+      width:100%;
+      background:rgba(0,0,0,.35);
+      border:1px solid rgba(212,175,55,.18);
+      color:var(--text);
+      border-radius:14px;
+      padding:12px 12px;
+      outline:none;
+      transition:border-color .2s ease, box-shadow .2s ease;
+    }
+    textarea{min-height:120px;resize:vertical}
+    input:focus,select:focus,textarea:focus{
+      border-color:rgba(212,175,55,.55);
+      box-shadow:0 0 0 4px rgba(212,175,55,.12);
+    }
+    .form-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+    .hint{color:var(--muted);font-size:.86rem;margin-top:10px}
+
+    .contact-cards{display:grid;gap:12px}
+    .mini{
+      display:flex;gap:12px;align-items:flex-start;
+      background:rgba(0,0,0,.35);
+      border:1px solid rgba(212,175,55,.14);
+      border-radius:18px;
+      padding:14px;
+    }
+    .mini b{color:var(--text)}
+    .mini p{color:var(--dim);font-size:.92rem}
+    .mini .dot{
+      width:44px;height:44px;border-radius:14px;
+      background:rgba(212,175,55,.12);
+      border:1px solid rgba(212,175,55,.18);
+      display:flex;align-items:center;justify-content:center;
+      font-weight:900;color:var(--primary);
+      flex:0 0 auto;
+    }
+
+    /* Footer */
+    footer{
+      padding:40px 0 30px;
+      border-top:1px solid rgba(212,175,55,.14);
+      background:rgba(15,15,15,.55);
+    }
+    .footer-grid{
+      display:grid;gap:18px;
+      grid-template-columns:2fr 1fr 1fr 1fr;
+      align-items:start;
+    }
+    .footer-brand p{color:var(--dim);margin-top:10px}
+    .socials{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+    .socials a{
+      width:42px;height:42px;border-radius:14px;
+      background:rgba(212,175,55,.12);
+      border:1px solid rgba(212,175,55,.22);
+      display:flex;align-items:center;justify-content:center;
+      transition:transform .2s ease, background .2s ease;
+      font-weight:900;color:var(--primary);
+    }
+    .socials a:hover{transform:translateY(-2px);background:rgba(212,175,55,.20)}
+    .foot h4{color:var(--primary);margin-bottom:10px}
+    .foot ul{list-style:none;display:grid;gap:8px}
+    .foot a{color:var(--dim)}
+    .foot a:hover{color:var(--primary)}
+    .copyright{
+      margin-top:22px;
+      padding-top:18px;
+      border-top:1px solid rgba(212,175,55,.12);
+      color:var(--muted);
+      text-align:center;
+      font-size:.9rem;
+    }
+
+    /* Mobile sticky CTA */
+    .sticky-cta{
+      position:fixed;
+      left:12px;right:12px;bottom:12px;
+      display:none;
+      gap:10px;
+      z-index:9999;
+    }
+    .sticky-cta a{
+      flex:1;
+      padding:14px 14px;
+      border-radius:16px;
+      font-weight:900;
+      display:flex;align-items:center;justify-content:center;
+      border:1px solid rgba(212,175,55,.22);
+      background:rgba(0,0,0,.6);
+      backdrop-filter:blur(16px);
+    }
+    .sticky-cta a.primary{
+      background:var(--gold);
+      border:none;
+      color:#000;
+    }
+
+    /* Reveal */
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease, transform .7s ease}
+    .reveal.active{opacity:1;transform:translateY(0)}
+
+    /* Responsive */
+    @media (max-width: 1024px){
+      .hero-grid{grid-template-columns:1fr;gap:22px}
+      .hero-right{order:-1}
+      .grid{grid-template-columns:1fr 1fr}
+      .packages-grid{grid-template-columns:1fr}
+      .case-grid{grid-template-columns:1fr}
+      .portfolio-grid{grid-template-columns:1fr}
+      .steps{grid-template-columns:1fr 1fr}
+      .stats{grid-template-columns:1fr 1fr}
+      .test-grid{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr 1fr}
+      .nav-links{display:none}
+      .hamburger{display:flex}
+      .contact-wrap{grid-template-columns:1fr}
+      form .row{grid-template-columns:1fr}
+    }
+    @media (max-width: 640px){
+      nav{padding:14px 0}
+      header.hero{padding:110px 0 56px}
+      .sticky-cta{display:flex}
+      section{padding:72px 0}
+      .grid{grid-template-columns:1fr}
+      .steps{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr}
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      *{animation:none !important;transition:none !important;scroll-behavior:auto !important}
+      .gradient-orb{display:none}
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Background -->
+  <div class="bg-wrapper" aria-hidden="true">
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+    <div class="gradient-orb orb-3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <!-- Nav -->
+  <nav>
+    <div class="container">
+      <div class="nav-row">
+        <a class="brand" href="#top" aria-label="Webora Home">
+          <!-- Put your real logo file name here -->
+          <img src="assets/logo.jpg" alt="Webora logo">
+          <div class="logo">WEBORA</div>
+        </a>
+
+        <ul class="nav-links" aria-label="Primary navigation">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#packages">Packages</a></li>
+          <li><a href="#case-studies">Case Studies</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="nav-cta">
+          <a class="btn btn-ghost" href="https://www.instagram.com/mywebora/" target="_blank" rel="noopener">Instagram</a>
+          <a class="btn btn-primary" href="#contact">Get a Quote</a>
+          <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile panel -->
+    <div class="mobile-panel" id="mobilePanel" aria-hidden="true">
+      <div class="container">
+        <ul class="mobile-links">
+          <li><a href="#services"><span>Services</span> <em>→</em></a></li>
+          <li><a href="#packages"><span>Packages</span> <em>→</em></a></li>
+          <li><a href="#case-studies"><span>Case Studies</span> <em>→</em></a></li>
+          <li><a href="#portfolio"><span>Portfolio</span> <em>→</em></a></li>
+          <li><a href="#faq"><span>FAQ</span> <em>→</em></a></li>
+          <li><a href="#contact"><span>Contact</span> <em>→</em></a></li>
+          <li><a href="https://www.instagram.com/mywebora/" target="_blank" rel="noopener"><span>Instagram</span> <em>↗</em></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero" id="top">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-left reveal">
+          <div class="badge">Premium Digital Studio • Websites • Booking • Menus</div>
+          <h1 class="h1">Digital Solutions That Transform Businesses</h1>
+          <p class="sub">
+            Webora builds <b>high-performance</b> websites, <b>booking systems</b>, and <b>QR digital menus</b>.
+            Engineered with <span style="color:var(--primary);font-weight:900">Computer Science precision</span>
+            + premium design to convert visitors into customers.
+          </p>
+
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="#contact">Start Your Project</a>
+            <a class="btn btn-ghost" href="#portfolio">See Work</a>
+            <a class="btn btn-ghost" href="https://wa.me/212693343710" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+
+          <div class="meta-row">
+            <div class="meta-chip"><i>⚡</i><b>Fast delivery</b> <span>(3–7 days)</span></div>
+            <div class="meta-chip"><i>📱</i><b>Mobile-first</b> <span>UX</span></div>
+            <div class="meta-chip"><i>🔎</i><b>SEO-ready</b> <span>structure</span></div>
+          </div>
+        </div>
+
+        <div class="hero-right reveal">
+          <!-- Replace emojis with your PNG icons (put files in same folder as HTML) -->
+          <div class="float-card">
+            <div class="row">
+              <div class="icon-bubble"><img src="assets/icons/rapid.png" alt="Rapid deployment icon"></div>
+              <div>
+                <h3>Rapid Deployment</h3>
+                <p>Premium deliverables, fast turnaround, clear milestones.</p>
+                <small>Perfect for launches & promotions.</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="float-card">
+            <div class="row">
+              <div class="icon-bubble"><img src="assets/icons/premium.png" alt="Premium design icon"></div>
+              <div>
+                <h3>Premium Craftsmanship</h3>
+                <p>Elegant UI/UX, modern animations, conversion-focused layout.</p>
+                <small>Designed to build trust instantly.</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="float-card">
+            <div class="row">
+              <div class="icon-bubble"><img src="assets/icons/excellence.png" alt="Engineering excellence icon"></div>
+              <div>
+                <h3>Engineering Excellence</h3>
+                <p>Clean, scalable code and best practices from day one.</p>
+                <small>Performance & maintainability.</small>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Proof -->
+  <section class="proof">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">Proof</div>
+        <h2 class="h2">Built like top studios: design + results</h2>
+        <p class="lead">
+          Clients choose studios that show outcomes. Webora focuses on speed, clarity, and measurable impact.
+          (Replace the numbers below with your real results as you grow.)
+        </p>
+      </div>
+
+      <div class="stats reveal">
+        <div class="stat"><b>3–7 days</b><span>Typical delivery window</span></div>
+        <div class="stat"><b>90+ / 100</b><span>Target Lighthouse performance</span></div>
+        <div class="stat"><b>Mobile-first</b><span>Designed for phones first</span></div>
+        <div class="stat"><b>SEO-ready</b><span>Structure + metadata</span></div>
+      </div>
+
+      <div class="trust-row reveal" aria-label="Trust badges">
+        <div class="trust-pill">Fast Communication</div>
+        <div class="trust-pill">Modern UI/UX</div>
+        <div class="trust-pill">Secure Best Practices</div>
+        <div class="trust-pill">Ongoing Support</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">Services</div>
+        <h2 class="h2">Everything your business needs to grow online</h2>
+        <p class="lead">High-conversion websites, QR digital menus, booking systems, branding, and ongoing optimization.</p>
+      </div>
+
+      <div class="grid">
+        <article class="card reveal">
+          <div class="card-top">
+            <div class="icon-bubble"><img src="assets/icons/digital.png" alt="Website icon"></div>
+            <div>
+              <h3>Professional Websites</h3>
+              <p>Landing pages, business sites, portfolios — built to convert.</p>
+            </div>
+          </div>
+          <ul class="list">
+            <li>Mobile-first design</li>
+            <li>Speed & SEO-ready structure</li>
+            <li>Modern animations (optional)</li>
+            <li>Contact forms + lead capture</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-top">
+            <div class="icon-bubble"><img src="assets/icons/professional.png" alt="Digital menu icon"></div>
+            <div>
+              <h3>QR Digital Menus</h3>
+              <p>Premium menu UI with images, categories, and WhatsApp ordering.</p>
+            </div>
+          </div>
+          <ul class="list">
+            <li>QR-ready & shareable link</li>
+            <li>Menu categories + items</li>
+            <li>Multi-language (optional)</li>
+            <li>Update-friendly structure</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-top">
+            <div class="icon-bubble"><img src="assets/icons/booking.png" alt="Booking icon"></div>
+            <div>
+              <h3>Booking Systems</h3>
+              <p>For salons & services: schedules, slots, services, notifications.</p>
+            </div>
+          </div>
+          <ul class="list">
+            <li>Time slots & availability</li>
+            <li>Services & staff management</li>
+            <li>Customer details capture</li>
+            <li>Admin dashboard (optional)</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-top">
+            <div class="icon-bubble"><img src="assets/icons/brand.png" alt="Brand identity icon"></div>
+            <div>
+              <h3>Brand Identity</h3>
+              <p>Logos, colors, UI systems — premium and consistent.</p>
+            </div>
+          </div>
+          <ul class="list">
+            <li>Logo + brand kit</li>
+            <li>Colors & typography</li>
+            <li>Social templates (optional)</li>
+            <li>UI/UX polish</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-top">
+            <div class="icon-bubble"><img src="assets/icons/growth.png" alt="Growth icon"></div>
+            <div>
+              <h3>Growth & Support</h3>
+              <p>Keep improving: content, performance, SEO, updates.</p>
+            </div>
+          </div>
+          <ul class="list">
+            <li>Monthly updates</li>
+            <li>Performance improvements</li>
+            <li>Analytics tracking</li>
+            <li>Priority support</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-top">
+            <div class="icon-bubble"><img src="assets/icons/techstart.png" alt="Tech icon"></div>
+            <div>
+              <h3>Custom Builds</h3>
+              <p>When you need more than a website: dashboards, tools, automation.</p>
+            </div>
+          </div>
+          <ul class="list">
+            <li>Custom features</li>
+            <li>Clean scalable code</li>
+            <li>Secure best practices</li>
+            <li>Documentation</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Packages -->
+  <section id="packages">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">Packages</div>
+        <h2 class="h2">Clear offers (starting from)</h2>
+        <p class="lead">Top studios qualify leads with pricing guidance. Adjust these to your market (GBP or MAD).</p>
+      </div>
+
+      <div class="packages-grid">
+        <div class="price-card reveal">
+          <div class="price-head">
+            <div>
+              <h3>Starter Website</h3>
+              <div class="price">£199 <small>starting</small></div>
+              <div class="price-desc">1–3 pages, fast, clean, conversion-focused.</div>
+            </div>
+            <div class="tag">Popular</div>
+          </div>
+          <ul class="list">
+            <li>Mobile-first layout</li>
+            <li>Contact form</li>
+            <li>Basic SEO + OG tags</li>
+            <li>1 revision round</li>
+          </ul>
+          <a class="btn btn-primary" href="#contact">Get This Package</a>
+          <div class="note">*Final price depends on pages & content.</div>
+        </div>
+
+        <div class="price-card reveal">
+          <div class="price-head">
+            <div>
+              <h3>QR Digital Menu</h3>
+              <div class="price">£149 <small>starting</small></div>
+              <div class="price-desc">Menu with categories + images + WhatsApp ordering.</div>
+            </div>
+            <div class="tag">Fast</div>
+          </div>
+          <ul class="list">
+            <li>Item images + pricing</li>
+            <li>Category filters</li>
+            <li>QR-ready link</li>
+            <li>Update-friendly structure</li>
+          </ul>
+          <a class="btn btn-primary" href="#contact">Get This Package</a>
+          <div class="note">*Multi-language available.</div>
+        </div>
+
+        <div class="price-card reveal">
+          <div class="price-head">
+            <div>
+              <h3>Booking System</h3>
+              <div class="price">£399 <small>starting</small></div>
+              <div class="price-desc">For salons & services: slots, services, customer details.</div>
+            </div>
+            <div class="tag">Pro</div>
+          </div>
+          <ul class="list">
+            <li>Scheduling & time slots</li>
+            <li>Services + staff (optional)</li>
+            <li>Notifications (optional)</li>
+            <li>Admin panel (optional)</li>
+          </ul>
+          <a class="btn btn-primary" href="#contact">Get This Package</a>
+          <div class="note">*Custom features quoted separately.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Studies -->
+  <section id="case-studies">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">Case Studies</div>
+        <h2 class="h2">Problem → Solution → Outcome</h2>
+        <p class="lead">
+          Replace these with your real projects (add screenshots + numbers).
+          Even small outcomes (e.g., faster ordering, more inquiries) build trust.
+        </p>
+      </div>
+
+      <div class="case-grid">
+        <article class="case reveal">
+          <div class="case-thumb">
+            <!-- Put a real screenshot here later -->
+            <img src="assets/icons/digitalmenu.jpg" alt="Case study: digital menu screenshot" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, rgba(212,175,55,.18), rgba(244,229,195,.06))'">
+          </div>
+          <div class="case-body">
+            <h3>Restaurant QR Digital Menu</h3>
+            <p><b>Problem:</b> slow ordering + paper menus. <br><b>Solution:</b> premium QR menu with images + WhatsApp order. <br><b>Outcome:</b> more orders & faster service.</p>
+            <div class="pill-row">
+              <span class="pill">QR Menu</span>
+              <span class="pill">Food Images</span>
+              <span class="pill">WhatsApp CTA</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="case reveal">
+          <div class="case-thumb">
+            <img src="assets/icons/bookingsalon.jpg" alt="Case study: booking system screenshot" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, rgba(212,175,55,.18), rgba(244,229,195,.06))'">
+          </div>
+          <div class="case-body">
+            <h3>Salon Booking System</h3>
+            <p><b>Problem:</b> missed calls & messy scheduling. <br><b>Solution:</b> time slots + service selection + confirmations. <br><b>Outcome:</b> fewer no-shows & easier management.</p>
+            <div class="pill-row">
+              <span class="pill">Booking</span>
+              <span class="pill">Time Slots</span>
+              <span class="pill">CRM (optional)</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="case reveal">
+          <div class="case-thumb">
+            <img src="assets/icons/candidature.jpg" alt="Case study: business website screenshot" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, rgba(212,175,55,.18), rgba(244,229,195,.06))'">
+          </div>
+          <div class="case-body">
+            <h3>Business Website + Branding</h3>
+            <p><b>Problem:</b> weak online presence. <br><b>Solution:</b> modern site + brand identity + lead capture. <br><b>Outcome:</b> more inquiries & stronger trust.</p>
+            <div class="pill-row">
+              <span class="pill">Brand Kit</span>
+              <span class="pill">SEO</span>
+              <span class="pill">Lead Form</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">Portfolio</div>
+        <h2 class="h2">Featured work (use real screenshots)</h2>
+        <p class="lead">Replace the images below with your real project screenshots. Add “Live Demo” links if available.</p>
+      </div>
+
+      <div class="portfolio-grid">
+        <div class="work reveal">
+          <img src="assets/icons/menu.jpg" alt="Portfolio item 1" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, rgba(212,175,55,.14), rgba(244,229,195,.06))'">
+          <div class="overlay">
+            <h3>Digital Menu — Snack/Restaurant</h3>
+            <p>Modern categories, images, premium UI, WhatsApp ordering.</p>
+            <div class="actions">
+              <a href="#contact">Request Demo</a>
+              <a href="#contact">Get Similar</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="work reveal">
+          <img src="assets/icons/slots.png" alt="Portfolio item 2" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, rgba(212,175,55,.14), rgba(244,229,195,.06))'">
+          <div class="overlay">
+            <h3>Booking System — Salon</h3>
+            <p>Time slots, services, customer details, admin options.</p>
+            <div class="actions">
+              <a href="#contact">Request Demo</a>
+              <a href="#contact">Get Similar</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="work reveal">
+          <img src="assets/icons/business.jpg" alt="Portfolio item 3" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, rgba(212,175,55,.14), rgba(244,229,195,.06))'">
+          <div class="overlay">
+            <h3>Business Website</h3>
+            <p>High-trust design, fast loading, SEO structure, lead capture.</p>
+            <div class="actions">
+              <a href="#contact">Request Demo</a>
+              <a href="#contact">Get Similar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section id="process" class="proof">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">Process</div>
+        <h2 class="h2">A clear timeline clients trust</h2>
+        <p class="lead">This reduces confusion and increases conversions — exactly how top studios work.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step reveal">
+          <div class="num">1</div>
+          <h3>Discovery</h3>
+          <p>We align on goals, target customers, content, and the fastest path to results.</p>
+        </div>
+        <div class="step reveal">
+          <div class="num">2</div>
+          <h3>Design</h3>
+          <p>Premium UI mockups: layout, colors, typography, and conversion structure.</p>
+        </div>
+        <div class="step reveal">
+          <div class="num">3</div>
+          <h3>Build</h3>
+          <p>Clean, production-ready code. Mobile-first. Performance & SEO foundations.</p>
+        </div>
+        <div class="step reveal">
+          <div class="num">4</div>
+          <h3>Launch + Support</h3>
+          <p>Deploy, connect domain, QA. Optional ongoing support and growth updates.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">Testimonials</div>
+        <h2 class="h2">Social proof that sells</h2>
+        <p class="lead">Replace with real client names/businesses (or “Local Restaurant, Newcastle”).</p>
+      </div>
+
+      <div class="test-grid">
+        <div class="quote reveal">
+          <p>“The new QR menu looks premium and customers order faster. The design is clean and professional.”</p>
+          <div class="who">Restaurant Owner <span>• Digital Menu</span></div>
+        </div>
+        <div class="quote reveal">
+          <p>“Booking is now organized. Clients choose time slots easily and we get more appointments.”</p>
+          <div class="who">Salon Manager <span>• Booking System</span></div>
+        </div>
+        <div class="quote reveal">
+          <p>“Our website finally looks like a real brand. We receive more messages from customers.”</p>
+          <div class="who">Business Client <span>• Website + Branding</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="proof">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">FAQ</div>
+        <h2 class="h2">Quick answers before clients ask</h2>
+        <p class="lead">This increases conversions and saves your time.</p>
+      </div>
+
+      <div class="faq">
+        <div class="faq-item reveal">
+          <button class="faq-q" type="button">
+            How long does it take?
+            <i>+</i>
+          </button>
+          <div class="faq-a">
+            <p>Most projects take <b>7-10 days</b> depending on content, pages, and features. You’ll get a clear timeline after discovery.</p>
+          </div>
+        </div>
+
+       <div class="faq-item reveal">
+  <button class="faq-q" type="button">
+    How much does a project cost?
+    <i>+</i>
+  </button>
+  <div class="faq-a">
+    <p>Every project is quoted based on scope. Simple sites start affordable, while advanced systems cost more. You’ll receive a clear fixed quote before work begins — no surprises.</p>
+  </div>
+</div>
+
+<div class="faq-item reveal">
+  <button class="faq-q" type="button">
+    Do I fully own the website?
+    <i>+</i>
+  </button>
+  <div class="faq-a">
+    <p>Yes. After final payment, the website is 100% yours. You own the files, domain, and content.</p>
+  </div>
+</div>
+
+<div class="faq-item reveal">
+  <button class="faq-q" type="button">
+    Is the website mobile-friendly?
+    <i>+</i>
+  </button>
+  <div class="faq-a">
+    <p>Absolutely. All Webora projects are built mobile-first and optimized for phones, tablets, and desktops.</p>
+  </div>
+</div>
+
+<div class="faq-item reveal">
+  <button class="faq-q" type="button">
+    Do you offer revisions?
+    <i>+</i>
+  </button>
+  <div class="faq-a">
+    <p>Yes. Each project includes revision rounds to make sure the final result matches your vision.</p>
+  </div>
+</div>
+
+<div class="faq-item reveal">
+  <button class="faq-q" type="button">
+    What happens after launch?
+    <i>+</i>
+  </button>
+  <div class="faq-a">
+    <p>We provide post-launch support and optional maintenance plans for updates, security, and improvements.</p>
+  </div>
+</div>
+
+<div class="faq-item reveal">
+  <button class="faq-q" type="button">
+    Can you redesign my existing website?
+    <i>+</i>
+  </button>
+  <div class="faq-a">
+    <p>Yes. We can redesign outdated websites and upgrade them to modern performance standards.</p>
+  </div>
+</div>
+
+<div class="faq-item reveal">
+  <button class="faq-q" type="button">
+    Do you help with SEO and Google visibility?
+    <i>+</i>
+  </button>
+  <div class="faq-a">
+    <p>Yes. All websites include SEO basics and performance optimization to help your business appear on Google.</p>
+  </div>
+</div>
+
+<div class="faq-item reveal">
+  <button class="faq-q" type="button">
+    How do payments work?
+    <i>+</i>
+  </button>
+  <div class="faq-a">
+    <p>We usually split payment into a deposit to start and the final balance after completion.</p>
+  </div>
+</div>
+
+<div class="faq-item reveal">
+  <button class="faq-q" type="button">
+    Can you work with urgent deadlines?
+    <i>+</i>
+  </button>
+  <div class="faq-a">
+    <p>Yes. Rush delivery is possible depending on availability. Let us know your timeline.</p>
+  </div>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">Contact</div>
+        <h2 class="h2">Get a quote in 60 seconds</h2>
+        <p class="lead">Fill the form and we’ll reply fast. Or message us directly on WhatsApp.</p>
+      </div>
+
+      <div class="contact-wrap">
+        <div class="panel reveal">
+          <form id="quoteForm">
+            <div class="row">
+              <div>
+                <label for="name">Full name</label>
+                <input id="name" name="name" placeholder="Your name" required>
+              </div>
+              <div>
+                <label for="phone">Phone / WhatsApp</label>
+                <input id="phone" name="phone" placeholder="+44 / +212 ..." required>
+              </div>
+            </div>
+
+            <div class="row" style="margin-top:12px;">
+              <div>
+                <label for="service">Service</label>
+                <select id="service" name="service" required>
+                  <option value="" selected disabled>Select a service</option>
+                  <option>Website</option>
+                  <option>QR Digital Menu</option>
+                  <option>Booking System</option>
+                  <option>Branding / Logo</option>
+                  <option>Custom</option>
+                </select>
+              </div>
+              <div>
+                <label for="budget">Budget (optional)</label>
+                <select id="budget" name="budget">
+                  <option value="" selected>Choose</option>
+                  <option>£100–£200</option>
+                  <option>£200–£400</option>
+                  <option>£400–£800</option>
+                  <option>£800+</option>
+                </select>
+              </div>
+            </div>
+
+            <div style="margin-top:12px;">
+              <label for="message">Project details</label>
+              <textarea id="message" name="message" placeholder="Tell us what you need (pages, menu items, booking features, deadline)..." required></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">Send Request</button>
+              <a class="btn btn-ghost" href="https://wa.me/212693343710" target="_blank" rel="noopener">WhatsApp Instead</a>
+            </div>
+
+            <div class="hint">
+              Tip: If you want a faster quote, include your business name + location + deadline.
+            </div>
+          </form>
+        </div>
+
+        <div class="panel reveal">
+  <div class="contact-cards">
+
+    <div class="mini">
+      <div class="dot">
+        <img src="assets/icons/instagram.png" alt="Instagram" />
+      </div>
+      <div>
+        <b>Instagram</b>
+        <p>
+          <a href="https://www.instagram.com/mywebora/" target="_blank" rel="noopener">
+            @mywebora
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <div class="mini">
+      <div class="dot">
+        <img src="assets/icons/whatsapp.png" alt="WhatsApp" />
+      </div>
+      <div>
+        <b>WhatsApp</b>
+        <p>
+          <a href="https://wa.me/212693343710" target="_blank" rel="noopener">
+            +212 693 343 710
+          </a>
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+            <div class="mini">
+              <div class="dot">⏱</div>
+              <div>
+                <b>Typical delivery</b>
+                <p>7-10 days (depending on scope)</p>
+              </div>
+            </div>
+            <div class="mini">
+              <div class="dot">★</div>
+              <div>
+                <b>What you get</b>
+                <p>Premium design + mobile-first + SEO-ready + fast support</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">WEBORA</div>
+          <p>
+            A premium digital studio combining Computer Science expertise with exceptional design.
+            We build modern websites, booking systems, and QR digital menus that drive real business growth.
+          </p>
+          <div class="socials">
+            <a href="https://www.instagram.com/mywebora/" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+            <a href="https://wa.me/212693343710" target="_blank" rel="noopener" aria-label="WhatsApp">WA</a>
+            <a href="#contact" aria-label="Contact">✉</a>
+          </div>
+        </div>
+
+        <div class="foot">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Websites</a></li>
+            <li><a href="#services">Digital Menus</a></li>
+            <li><a href="#services">Booking Systems</a></li>
+            <li><a href="#services">Branding</a></li>
+          </ul>
+        </div>
+
+        <div class="foot">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#case-studies">Case Studies</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="foot">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="#contact">Get a Quote</a></li>
+            <li><a href="https://wa.me/212693343710" target="_blank" rel="noopener">WhatsApp</a></li>
+            <li><a href="mailto:support@mywebora.co.site">Email</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="copyright">
+        © 2026 Webora Digital Studio. Engineered with precision. Built with passion.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Sticky CTA -->
+  <div class="sticky-cta" aria-label="Quick actions">
+    <a class="primary" href="#contact">Get Quote</a>
+    <a href="https://wa.me/212693343710" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+
+  <script>
+    // Mobile menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobilePanel = document.getElementById('mobilePanel');
+
+    function closeMobileMenu(){
+      hamburger.classList.remove('active');
+      hamburger.setAttribute('aria-expanded','false');
+      mobilePanel.classList.remove('open');
+      mobilePanel.setAttribute('aria-hidden','true');
+    }
+
+    hamburger?.addEventListener('click', () => {
+      const isOpen = mobilePanel.classList.toggle('open');
+      hamburger.classList.toggle('active', isOpen);
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+      mobilePanel.setAttribute('aria-hidden', String(!isOpen));
+    });
+
+    // Close mobile menu on link click
+    document.querySelectorAll('.mobile-panel a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', closeMobileMenu);
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (!href || href === '#') return;
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Reveal on scroll
+    const revealEls = Array.from(document.querySelectorAll('.reveal'));
+    const onReveal = () => {
+      revealEls.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if (top < window.innerHeight - 120) el.classList.add('active');
+      });
+    };
+    window.addEventListener('scroll', onReveal, { passive: true });
+    onReveal();
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-item').forEach(item=>{
+      const btn = item.querySelector('.faq-q');
+      btn?.addEventListener('click', ()=>{
+        const open = item.classList.toggle('open');
+        // close others
+        document.querySelectorAll('.faq-item').forEach(other=>{
+          if(other !== item) other.classList.remove('open');
+        });
+      });
+    });
+
+    // Contact form -> opens mailto with filled info (no backend needed)
+    const form = document.getElementById('quoteForm');
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      const name = (data.get('name') || '').toString().trim();
+      const phone = (data.get('phone') || '').toString().trim();
+      const service = (data.get('service') || '').toString().trim();
+      const budget = (data.get('budget') || '').toString().trim();
+      const message = (data.get('message') || '').toString().trim();
+
+      const subject = encodeURIComponent(`Webora Quote Request — ${service || 'Project'}`);
+      const body = encodeURIComponent(
+        `Name: ${name}\nPhone/WhatsApp: ${phone}\nService: ${service}\nBudget: ${budget}\n\nDetails:\n${message}\n\nSent from Webora website.`
+      );
+
+      // Change to your real email if needed
+      window.location.href = `mailto:contact@webora.com?subject=${subject}&body=${body}`;
+      form.reset();
+    });
+
+    // Light parallax for orbs (desktop only)
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!prefersReduced) {
+      document.addEventListener('mousemove', (e) => {
+        const orbs = document.querySelectorAll('.gradient-orb');
+        const x = e.clientX / window.innerWidth;
+        const y = e.clientY / window.innerHeight;
+        orbs.forEach((orb, i) => {
+          const speed = (i + 1) * 14;
+          orb.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+        });
+      });
+    }
+  </script>
+</body>
+</html>
